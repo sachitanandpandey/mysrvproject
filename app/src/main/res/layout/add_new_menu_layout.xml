@@ -1,0 +1,77 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.v7.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+
+    app:cardElevation="4dp"
+    >
+    
+    <LinearLayout
+        android:layout_margin="20dp"
+        android:orientation="vertical"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <com.rengwuxian.materialedittext.MaterialEditText
+            android:id="@+id/edtName"
+            android:hint="Name"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:textColorHint="@color/colorPrimary"
+            android:text=""
+            android:textColor="@color/colorPrimary"
+            android:textSize="24sp"
+            android:inputType="text"
+            app:met_baseColor="@color/colorPrimary"
+            app:met_floatingLabel="highlight"
+
+            app:met_primaryColor="@color/colorPrimary"
+            app:met_singleLineEllipsis="true"
+            />
+
+        <LinearLayout
+            android:weightSum="2"
+            android:orientation="horizontal"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <Button
+                android:id="@+id/btnSelect"
+                style="@style/Widget.AppCompat.Button.Small"
+                android:layout_width="0dp"
+
+                android:layout_height="wrap_content"
+                android:layout_margin="8dp"
+                android:layout_weight="1"
+                android:layout_marginRight="8dp"
+                android:layout_marginLeft="8dp"
+                android:background="#FF4081"
+                android:text="SELECT"
+                android:textColor="@color/colorPrimary"
+                android:layout_alignParentBottom="true"
+                />
+
+            <Button
+                android:id="@+id/btnUpload"
+                style="@style/Widget.AppCompat.Button.Small"
+                android:layout_width="0dp"
+
+                android:layout_height="wrap_content"
+                android:layout_margin="8dp"
+                android:layout_weight="1"
+                android:layout_marginRight="8dp"
+                android:layout_marginLeft="8dp"
+                android:background="#FF4081"
+                android:text="UPLOAD"
+                android:textColor="@color/colorPrimaryDark"
+                android:layout_alignParentBottom="true"
+                />
+
+        </LinearLayout>
+
+
+
+    </LinearLayout>
+
+</android.support.v7.widget.CardView>
