@@ -61,23 +61,23 @@ public class OrderStatus extends AppCompatActivity {
             @Override
             protected void populateViewHolder(OrderViewHolder viewHolder, final Request model, int position) {
 
-            viewHolder.txtOrderId.setText(adapter.getRef(position).getKey());
-            viewHolder.txtOrderStatus.setText(Common.convertCodeToStatus(model.getStatus()));
-            viewHolder.txtOrderAddress.setText(model.getAddress());
-            viewHolder.txtOrderPhone.setText(model.getPhone());
+                viewHolder.txtOrderId.setText(adapter.getRef(position).getKey());
+                viewHolder.txtOrderStatus.setText(Common.convertCodeToStatus(model.getStatus()));
+                viewHolder.txtOrderAddress.setText(model.getAddress());
+                viewHolder.txtOrderPhone.setText(model.getPhone());
 
-            viewHolder.setItemClickListener(new ItemClickListener() {
-                @Override
-                public void onClick(View view, int position, boolean isLongClick) {
+                viewHolder.setItemClickListener(new ItemClickListener() {
+                    @Override
+                    public void onClick(View view, int position, boolean isLongClick) {
 
-                    Intent trackingOrder = new Intent(OrderStatus.this,TrackingOrder.class);
-                    Common.currentRequest = model;
-                    startActivity(trackingOrder);
+                        Intent trackingOrder = new Intent(OrderStatus.this,TrackingOrder.class);
+                        Common.currentRequest = model;
+                        startActivity(trackingOrder);
 
 
 
-                }
-            });
+                    }
+                });
 
             }
         };
@@ -136,3 +136,4 @@ public class OrderStatus extends AppCompatActivity {
 
     }
 }
+

@@ -44,7 +44,8 @@
         <activity
             android:name=".TrackingOrder"
             android:label="@string/title_activity_tracking_order" />
-        <activity android:name=".OrderStatus"></activity>
+        <activity android:name=".OrderStatus" />
+        <activity android:name=".OrderDetail"></activity>
     </application>
 
 </manifest>

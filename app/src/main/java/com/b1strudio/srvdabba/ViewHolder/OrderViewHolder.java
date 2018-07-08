@@ -3,6 +3,7 @@ package com.b1strudio.srvdabba.ViewHolder;
 import android.support.v7.widget.RecyclerView;
 import android.view.ContextMenu;
 import android.view.View;
+import android.widget.Button;
 import android.widget.TextView;
 
 import com.b1strudio.srvdabba.Interface.ItemClickListener;
@@ -12,9 +13,15 @@ import com.b1strudio.srvdabba.R;
  * Created by sachitanand on 28/05/18.
  */
 
-public class OrderViewHolder extends RecyclerView.ViewHolder implements View.OnClickListener, View.OnCreateContextMenuListener{
+public class OrderViewHolder extends RecyclerView.ViewHolder
+        implements View.OnClickListener,
+        View.OnLongClickListener,
+        View.OnCreateContextMenuListener
+{
 
     public TextView txtOrderId, txtOrderStatus,txtOrderPhone,txtOrderAddress;
+
+    public Button btnEdit,btnRemove,btnDetail,btnDirection;
 
     private ItemClickListener itemClickListener;
 
@@ -26,7 +33,13 @@ public class OrderViewHolder extends RecyclerView.ViewHolder implements View.OnC
         txtOrderStatus = (TextView)itemView.findViewById(R.id.order_status);
         txtOrderPhone = (TextView)itemView.findViewById(R.id.order_phone);
 
+/*        btnEdit = (Button)itemView.findViewById(R.id.btnEdit);
+        btnRemove = (Button)itemView.findViewById(R.id.btnRemove);
+        btnDetail = (Button)itemView.findViewById(R.id.btnDetail);
+        btnDirection = (Button)itemView.findViewById(R.id.btnDirection);*/
+
         itemView.setOnClickListener(this);
+        itemView.setOnLongClickListener(this);
         itemView.setOnCreateContextMenuListener(this);
 
     }
@@ -48,5 +61,11 @@ public class OrderViewHolder extends RecyclerView.ViewHolder implements View.OnC
         contextMenu.setHeaderTitle("Select the Action");
         contextMenu.add(0,0,getAdapterPosition(),"Update");
         contextMenu.add(0,1,getAdapterPosition(),"Delete");
+    }
+
+    @Override
+    public boolean onLongClick(View view) {
+        itemClickListener.onClick(view,getAdapterPosition(),true);
+        return true;
     }
 }
